@@ -23,7 +23,7 @@ RECEIVER_EMAIL: xxxxx@qq.com
 # 邮件主题 可自定义
 SUBJECT: 【警告】glados网站签到异常报警
 # 邮件内容 可自定义
-MESSAGE: 签到异常,请到网页https://glados.network/console/checkin查看
+MESSAGE: 签到异常,请到网页https://glados.network/console/checkin 查看
 # SMTP 服务器的地址和端口号 默认为qq邮箱
 SMTP_SERVER: smtp.qq.com
 SMTP_PORT: 587
