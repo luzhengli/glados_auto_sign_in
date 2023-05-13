@@ -1,5 +1,6 @@
 # 简介
-**glados_auto_sign_in 是一个 Python 实现的自动签到脚本**，只需要在 `config.yaml` 文件中配置几个关键的参数即可快速上手。
+- **glados_auto_sign_in 是一个 Python 实现的自动签到脚本**，只需要在 `config.yaml` 文件中配置几个关键的参数即可快速上手。
+- 支持签到异常时发邮件报警（简单配置即可使用）
 
 **注**：
 - [glados](https://glados.network/) 是啥？一个通过签到可以白嫖的科学上网订阅源。
