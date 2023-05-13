@@ -1,0 +1,33 @@
+# 注意：下面出现字符xxx（位数不定）的地方是需要手动修改的
+
+## 网络连接有关 ##
+# 设置代理（glados网站被墙，大陆访问需要加上） 这里默认的是启动clash代理
+# 请根据你本机情况自定义 如果无需代理的环境请直接删除http和https这两行
+PROXIES:
+  http: http://localhost:7890
+  https: http://localhost:7890
+# 设置cookie 如果过期了需要更新
+COOKIE: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# 签到的URL 经过测试两个URL均可
+URL: https://glados.network/api/user/checkin
+#URL: https://glados.rocks/api/user/checkin
+
+
+## 邮件报警有关 ##
+# 是否在签到失败时开启邮件报警 仅当该参数为 true 时后续参数才生效
+ENABLE_ALERT_MAIL: true
+# 发送邮件的邮件地址 和接收邮箱的地址一致即可
+SENDER_EMAIL: xxxxxx@qq.com
+# 接收邮件的邮箱地址 默认支持qq邮箱 如果设置其他邮箱 请同时修改 SMTP_SERVER、SMTP_PORT、USERNAME、PASSWORD
+RECEIVER_EMAIL: xxxxx@qq.com
+# 邮件主题 可自定义
+SUBJECT: 【警告】glados网站签到异常报警
+# 邮件内容 可自定义
+MESSAGE: 签到异常,请到网页https://glados.network/console/checkin查看
+# SMTP 服务器的地址和端口号 默认为qq邮箱
+SMTP_SERVER: smtp.qq.com
+SMTP_PORT: 587
+# 邮箱账号
+USERNAME: xxxxx@qq.com
+# 邮件授权码（注意：不是邮箱密码） 由邮箱服务方生成
+PASSWORD: xxxxxxxxxxxxxxxx
