@@ -15,7 +15,7 @@ URL: https://glados.network/api/user/checkin
 
 ## 邮件报警有关 ##
 # 是否在签到失败时开启邮件报警 仅当该参数为 true 时后续参数才生效
-ENABLE_ALERT_MAIL: true
+ENABLE_ALERT_MAIL: false
 # 发送邮件的邮件地址 和接收邮箱的地址一致即可
 SENDER_EMAIL: xxxxxx@qq.com
 # 接收邮件的邮箱地址 默认支持qq邮箱 如果设置其他邮箱 请同时修改 SMTP_SERVER、SMTP_PORT、USERNAME、PASSWORD
@@ -29,5 +29,5 @@ SMTP_SERVER: smtp.qq.com
 SMTP_PORT: 587
 # 邮箱账号
 USERNAME: xxxxx@qq.com
-# 邮件授权码（注意：不是邮箱密码） 由邮箱服务方生成
+# 邮箱授权码（注意：不是邮箱密码） 由邮箱服务方生成
 PASSWORD: xxxxxxxxxxxxxxxx
