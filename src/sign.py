@@ -56,15 +56,15 @@ if __name__ == '__main__':
     print(f'状态码：{response.status_code}')
     print(response.text)
 
-    # 假如状态码不是200，则邮件报警，内容就是response.text
-    if response.status_code != 200:
-        if CONFIG["ENABLE_ALERT_MAIL"]:
-            send_alert_email(CONFIG["SENDER_EMAIL"], CONFIG["RECEIVER_EMAIL"], subject=CONFIG["SUBJECT"],
-                             message=CONFIG["MESSAGE"], smtp_server=CONFIG["SMTP_SERVER"],
-                             smtp_port=CONFIG["SMTP_PORT"],
-                             username=CONFIG["USERNAME"], password=CONFIG["PASSWORD"])
-    else:
-        # 假如状态码为200 说明已经签到成功
+    # 假如状态码为200 说明已经签到成功
+    if response.status_code == 200:
         today = date.today()
         today_str = today.strftime("%Y.%m.%d")
         print(f'[{today_str}] 已签到成功！')
+    else:
+        # 假如状态码不是200，则邮件报警，内容就是response.text
+        if CONFIG["ENABLE_ALERT_MAIL"]:
+            send_alert_email(CONFIG["SENDER_EMAIL"], CONFIG["RECEIVER_EMAIL"], subject=CONFIG["SUBJECT"],
+                             message=f"签到失败，[状态码]：{response.status_code}，[响应]: {response.text}，请查看网站检查：{CONFIG['URL']}", smtp_server=CONFIG["SMTP_SERVER"],
+                             smtp_port=CONFIG["SMTP_PORT"],
+                             username=CONFIG["USERNAME"], password=CONFIG["PASSWORD"])
