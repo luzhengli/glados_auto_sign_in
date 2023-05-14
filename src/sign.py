@@ -64,7 +64,8 @@ if __name__ == '__main__':
     else:
         # 假如状态码不是200，则邮件报警，内容就是response.text
         if CONFIG["ENABLE_ALERT_MAIL"]:
+            message = f"签到失败\n[状态码]：{response.status_code}\n[响应]: {response.text}\n请查看网站检查：https://glados.network/"
             send_alert_email(CONFIG["SENDER_EMAIL"], CONFIG["RECEIVER_EMAIL"], subject=CONFIG["SUBJECT"],
-                             message=f"签到失败，[状态码]：{response.status_code}，[响应]: {response.text}，请查看网站检查：{CONFIG['URL']}", smtp_server=CONFIG["SMTP_SERVER"],
+                             message=message, smtp_server=CONFIG["SMTP_SERVER"],
                              smtp_port=CONFIG["SMTP_PORT"],
                              username=CONFIG["USERNAME"], password=CONFIG["PASSWORD"])
